@@ -1,7 +1,6 @@
 package test;
 
-import static org.junit.Assert.*;
-import junit.framework.Assert;
+import static org.junit.Assert.assertEquals;
 
 import main.Queen;
 
@@ -17,14 +16,23 @@ public class QueenTest {
 		
 		boolean threat = queenA.threatens(queenB);
 		
-		assertEquals("Queen threatens though", false, threat);
+		assertEquals("Queen threatens though.", false, threat);
 	}
-	
 	
 	@Test
 	public void test_threating_horizontale() {
 		main.Queen queenA = new Queen(3, 7);
 		main.Queen queenB = new Queen(8, 7);
+		
+		boolean threat = queenA.threatens(queenB);
+		
+		assertEquals("Queens are not threatened.", true, threat);
+	}
+	
+	@Test
+	public void test_threating_verticale() {
+		main.Queen queenA = new Queen(3, 7);
+		main.Queen queenB = new Queen(3, 5);
 		
 		boolean threat = queenA.threatens(queenB);
 		

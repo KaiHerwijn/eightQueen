@@ -19,7 +19,7 @@ public class Queen {
 	
 	public boolean threatens(Queen queenB) {
 		
-		return true;
+		return getY() == queenB.getY() || getX() == queenB.getX();
 	}
 		
 }
