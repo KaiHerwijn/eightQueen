@@ -18,8 +18,15 @@ public class Queen {
 	}
 	
 	public boolean threatens(Queen queenB) {
-		
-		return getY() == queenB.getY() || getX() == queenB.getX();
+		return threatenHorizontale(queenB) || threatenVerticale(queenB);
+	}
+
+	private boolean threatenVerticale(Queen queenB) {
+		return getX() == queenB.getX();
+	}
+
+	private boolean threatenHorizontale(Queen queenB) {
+		return getY() == queenB.getY();
 	}
 		
 }
