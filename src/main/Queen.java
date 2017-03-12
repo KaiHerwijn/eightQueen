@@ -18,7 +18,15 @@ public class Queen {
 	}
 	
 	public boolean threatens(Queen queenB) {
-		return threatenHorizontale(queenB) || threatenVerticale(queenB);
+		return threatenHorizontale(queenB) || threatenVerticale(queenB) || threatenbottomleft_topright(queenB) || threatenbottomright_topleft(queenB);
+	}
+
+	private boolean threatenbottomright_topleft(Queen queenB) {
+		return getY() - getX() == queenB.getY() - queenB.getX();
+	}
+
+	private boolean threatenbottomleft_topright(Queen queenB) {
+		return getY() + getX() == queenB.getY() + queenB.getX();
 	}
 
 	private boolean threatenVerticale(Queen queenB) {
