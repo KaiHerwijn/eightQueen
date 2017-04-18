@@ -36,5 +36,9 @@ public class Queen {
 	private boolean threatenHorizontale(Queen queenB) {
 		return getY() == queenB.getY();
 	}
+
+	public static boolean isvalidcoordinate(String coordinate) {
+		return coordinate.matches("^-?\\d+,-?\\d+$");
+	}
 		
 }

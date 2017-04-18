@@ -59,5 +59,157 @@ public class QueenTest {
 		
 		assertEquals("Queens are not threatened from bottomright to topleft.", true, threat);
 	}
+	
+	@Test
+	public void test_validCoordinate01() {
+		String regex = "83,48";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is not valid, but should be.", true, valid);
+	}
+	@Test
+	public void test_validCoordinate02() {
+		String regex = "-32,3";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is not valid, but should be.", true, valid);
+	}
+	@Test
+	public void test_validCoordinate03() {
+		String regex = "15,-70";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is not valid, but should be.", true, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate04() {
+		String regex = "-79,-38";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is not valid, but should be.", true, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate05() {
+		String regex = "9-79,-38";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate06() {
+		String regex = "-79,-38,67";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate07() {
+		String regex = "6557";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate08() {
+		String regex = "53,";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate09() {
+		String regex = ",-10";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate10() {
+		String regex = ",3";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate11() {
+		String regex = "a,6";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate12() {
+		String regex = "7,a";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate13() {
+		String regex = "dhs";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate14() {
+		String regex = ",-";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate15() {
+		String regex = "-";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate16() {
+		String regex = ",";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
+	@Test
+	public void test_validCoordinate17() {
+		String regex = "";
+		
+		boolean valid = Queen.isvalidcoordinate(regex);
+		
+		assertEquals("This coordinate is valid, but should not be.", false, valid);
+		
+	}
 
 }
